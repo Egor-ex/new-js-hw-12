@@ -1,0 +1,53 @@
+{{!-- <div class='card-country'>
+  <div class='card-country-name'>
+
+    <h1>{{name.common}}</h1>
+
+  </div>
+  <div class='card-country-container'>
+    <div class='card-country-description'>
+      <p><b>Capital: </b>{{capital}}</p>
+      <p><b>Population: </b>{{population}}</p>
+      <p><b>Languages: </b>{{#each languages}}
+          {{this}}
+        {{/each}}</p>
+    </div>
+    <div class='card-country-flag'><img src='{{flags.svg}}' alt='Flag {{name}}' /></div>
+  </div>
+
+</div> --}}
+
+
+{{!-- /////////////////////////////////////// --}}
+
+{{#each this}}
+  <li class='country-item'>
+    <div class='js-countryItem'>
+      <div class='country__content'>
+        <h2 class='js-country-name'>{{name.common}}</h2>
+        <ul class='country-card__list'>
+          <li class='country-card__item'><span
+              class='country-card__item--subtitle'
+            >Capital:</span>
+            {{capital}}
+          </li>
+          <li class='country-card__item'><span
+              class='country-card__item--subtitle'
+            >Population:</span>
+            {{area}}
+          </li>
+          <li class='country-card__item'><span class='country-card__item--language'
+              class='country-card__item--subtitle'
+            >Languages:</span>
+            {{#each languages}}
+              {{this}}
+            {{/each}}
+          </li>
+        </ul>
+      </div>
+      <div>
+        <img class='country-card__image' {{#each flags}} src="{{this}}" {{/each}} alt='Flag' />
+      </div>
+    </div>
+  </li>
+{{/each}}
